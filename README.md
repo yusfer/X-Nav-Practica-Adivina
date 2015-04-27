@@ -1,4 +1,4 @@
-# Prácitca final: Adivina dónde está
+# Práctica final: Adivina dónde está
 
 Ejercicio de asignaturas de aplicaciones HTML5. Práctica final. Adivina dónde está.
 
