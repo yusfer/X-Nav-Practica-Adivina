@@ -4,7 +4,7 @@
             {
 		"geometry": {
                     "type": "Point",
-                    "coordinates": [-3.7037901999999576, 40.4167754]
+                    "coordinates": [40.4167754,-3.7037901999999576]
 		},
 		"type": "Feature",
 		"properties": {
@@ -15,7 +15,7 @@
             {
 		"geometry": {
                     "type": "Point",
-                    "coordinates": [-0.12775829999998223, 51.5073509]
+                    "coordinates": [ 51.5073509,-0.12775829999998223]
 		},
 		"type": "Feature",
 		"properties": {
@@ -26,7 +26,7 @@
             {
 		"geometry": {
                     "type": "Point",
-                    "coordinates": [12.496365500000024, 41.9027835]
+                    "coordinates": [41.9027835,12.496365500000024 ]
 		},
 		"type": "Feature",
 		"properties": {
@@ -37,7 +37,7 @@
             {
 		"geometry": {
                     "type": "Point",
-                    "coordinates": [-7.589843400000063, 33.5731104]
+                    "coordinates": [ 33.5731104,-7.589843400000063]
 		},
 		"type": "Feature",
 		"properties": {
@@ -48,7 +48,7 @@
             {
 		"geometry": {
                     "type": "Point",
-                    "coordinates": [35.6894875, 139.69170639999993]
+                    "coordinates": [35.6894875,139.69170639999993 ]
 		},
 		"type": "Feature",
 		"properties": {
@@ -59,18 +59,18 @@
             {
 		"geometry": {
                     "type": "Point",
-                    "coordinates": [-33.8674869, 151.20699020000006]
+                    "coordinates": [ 41.00527,28.976959999999963]
 		},
 		"type": "Feature",
 		"properties": {
-                    "Name": "Sidney"
+                    "Name": "Estambul"
 		},
 		"id": 6
             },
             {
 		"geometry": {
                     "type": "Point",
-                    "coordinates": [-58.38159310000003, -34.6037232]
+                    "coordinates": [-34.6037232,-58.38159310000003 ]
 		},
 		"type": "Feature",
 		"properties": {
@@ -81,7 +81,7 @@
             {
 		"geometry": {
                     "type": "Point",
-                    "coordinates": [-87.62979819999998, 41.8781136]
+                    "coordinates": [ 41.8781136,-87.62979819999998]
 		},
 		"type": "Feature",
 		"properties": {
@@ -92,7 +92,7 @@
             {
 		"geometry": {
                     "type": "Point",
-                    "coordinates": [55.270782800000006, 25.2048493]
+                    "coordinates": [ 25.2048493,55.270782800000006]
 		},
 		"type": "Feature",
 		"properties": {
@@ -103,7 +103,7 @@
             {
 		"geometry": {
                     "type": "Point",
-                    "coordinates": [-79.38318429999998, 43.653226]
+                    "coordinates": [ 43.653226,-79.38318429999998]
 		},
 		"type": "Feature",
 		"properties": {
