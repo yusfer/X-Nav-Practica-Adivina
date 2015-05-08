@@ -10,3 +10,15 @@
     margin-right: auto;
 
 }
+
+#fotos > img{
+ background-color: green;
+ display: inline-block;
+ }
+ 
+ #myCarousel {
+text-align: center; 
+ }
+ 
+.carousel-inner { text-align: center; }
+.carousel .item > img { display: inline-block; }

@@ -4,7 +4,104 @@
 //// parámetros en un array (generalmente) y retornarán el string que será ////
 //// incluido en el htmlen forma $("#id").html(stringcreado) o similares////
 
-
+//array con 10 fotos
+function creoCarrousel(array){
+	var carousel = ""
+	
+    carousel = '<div id="myCarousel" class="carousel slide" data-ride="carousel">'+
+      
+     ' <div class="carousel-inner" style="text-align: center;" role="listbox">'+
+     '   <div class="item active">'+
+      '    <img src="'+array[0]+'" alt="First slide" style="display: inline-block;">'+
+       '   <div class="container">'+
+       '     <div class="carousel-caption">'+
+              
+      '      </div>'+
+        '  </div>'+
+    '    </div>'+
+      '  <div class="item">'+
+      '    <img src="'+array[1]+'" alt="Second slide" style="display: inline-block;">'+
+        '  <div class="container">'+
+       '     <div class="carousel-caption">'+
+        '    </div>'+
+       '   </div>'+
+       ' </div>'+
+       ' <div class="item">'+
+       '   <img src="'+array[2]+'" alt="Third slide" style="display: inline-block;">'+
+       '   <div class="container">'+
+       '     <div class="carousel-caption">'+
+             
+       '     </div>'+
+      '    </div>'+
+      '  </div>'+
+       ' <div class="item">'+
+       '   <img src="'+array[3]+'" alt="Third slide" style="display: inline-block;">'+
+       '   <div class="container">'+
+       '     <div class="carousel-caption">'+
+             
+       '     </div>'+
+      '    </div>'+
+      '  </div>'+
+       ' <div class="item">'+
+      '    <img src="'+array[4]+'" alt="Fourth slide" style="display: inline-block;">'+
+        '  <div class="container">'+
+        '    <div class="carousel-caption">'+
+             
+       '     </div>'+
+        '  </div>'+
+     '   </div>'+
+       ' <div class="item">'+
+      '    <img src="'+array[5]+'" alt="Fifth slide" style="display: inline-block;">'+
+        '  <div class="container">'+
+        '    <div class="carousel-caption">'+
+             
+       '     </div>'+
+        '  </div>'+
+     '   </div>'+
+       ' <div class="item">'+
+      '    <img src="'+array[6]+'" alt="Sixth slide" style="display: inline-block;">'+
+        '  <div class="container">'+
+        '    <div class="carousel-caption">'+
+             
+       '     </div>'+
+        '  </div>'+
+     '   </div>'+
+       ' <div class="item">'+
+      '    <img src="'+array[7]+'" alt="Seventh slide" style="display: inline-block;">'+
+        '  <div class="container">'+
+        '    <div class="carousel-caption">'+
+             
+       '     </div>'+
+        '  </div>'+
+     '   </div>'+
+       ' <div class="item">'+
+      '    <img src="'+array[8]+'" alt="Eighth slide" style="display: inline-block;">'+
+        '  <div class="container">'+
+        '    <div class="carousel-caption">'+
+             
+       '     </div>'+
+        '  </div>'+
+     '   </div>'+
+       ' <div class="item">'+
+      '    <img src="'+array[9]+'" alt="Ninth slide" style="display: inline-block;">'+
+        '  <div class="container">'+
+        '    <div class="carousel-caption">'+
+             
+       '     </div>'+
+        '  </div>'+
+     '   </div>'+
+    '  </div>'+
+     ' <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">'+
+      '  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>'+
+      '  <span class="sr-only">Previous</span>'+
+    '  </a>'+
+     ' <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">'+
+      '  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'+
+     '   <span class="sr-only">Next</span>'+
+      '</a>'+
+   ' </div>'
+   return carousel
+}
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////    DOM JQUERY   ///////////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -85,6 +182,25 @@ $(document).ready(function() {
 			}
 		
 	}
+	
+	function fotosAlCarrousel(value){
+		
+		url = "http://api.flickr.com/services/feeds/photos_public.gne?tags=" + value + "&tagmode=any&format=json&jsoncallback=?"
+		$.getJSON(url,function(data){
+			
+		var  array = []
+		for(i=0;i<10;i++){
+			//list = list + "<li><img src=" + data.items[i].media.m+ "></li>"
+			array.push(data.items[i].media.m)
+		}
+		var carrousel = creoCarrousel(array)	//funcion que crea carrousel de tamaño 5
+		$("#fotos").html(carrousel);
+	})
+		
+	}
+		
+		
+		
 	$("#reiniciarbutton").click(function(){		//esto se hará automático
 	
 		local = nuevoGeoJson()
@@ -94,6 +210,8 @@ $(document).ready(function() {
 		marker2.bindPopup(local.properties.Name)
 		.openPopup();*/
 		// funcion sacar fotos flickr y colocar carrousel
+		fotosAlCarrousel(local.properties.Name)
+			
 	})
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////
