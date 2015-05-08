@@ -1,0 +1,115 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-3.7037901999999576, 40.4167754]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Madrid"
+		},
+		"id": 1
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-0.12775829999998223, 51.5073509]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Londres"
+		},
+		"id": 2
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [12.496365500000024, 41.9027835]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Roma"
+		},
+		"id": 3
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-7.589843400000063, 33.5731104]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Casablanca"
+		},
+		"id": 4
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [35.6894875, 139.69170639999993]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Tokyo"
+		},
+		"id": 5
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-33.8674869, 151.20699020000006]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Sidney"
+		},
+		"id": 6
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-58.38159310000003, -34.6037232]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Buenos Aires"
+		},
+		"id": 7
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-87.62979819999998, 41.8781136]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Chicago"
+		},
+		"id": 8
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [55.270782800000006, 25.2048493]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Dubái"
+		},
+		"id": 9
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-79.38318429999998, 43.653226]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Toronto"
+		},
+		"id": 10
+            }
+	]
+}
