@@ -1,4 +1,19 @@
 
+
+div.backgroundid{
+	background-image: url(../images/passport1.jpg);    
+    background-repeat:repeat;
+
+}
+
+footer {
+	background-color: black;
+}
+
+.tak{
+	 margin-left: 250px;
+
+}
 #navbar {
 	margin:20px 20px 75px 20px;
 }
@@ -22,3 +37,5 @@ text-align: center;
  
 .carousel-inner { text-align: center; }
 .carousel .item > img { display: inline-block; }
+
+
