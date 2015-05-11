@@ -18,6 +18,49 @@ footer {
 	margin:20px 20px 75px 20px;
 }
 
+#juegoseleccionado{
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
+	font-size: 22px;
+	margin:20px 20px 20px 20px;
+	color: #FFFFFF;
+}
+.button {
+
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
+	margin:20px 20px 20px 20px;
+	border-style: solid;
+    border-width: 5px;
+    font-size: 18px;
+    border-color: #000000;
+    padding: 20px;
+    border-radius: 15px;
+}
+.btn{
+	font-weight:bold;
+}
+.button:hover{
+	font-size: 22px;
+}
+#startbutton {
+	color: #FFFFFF;
+	background-color:#C91010;
+}
+#reiniciarbutton {
+	color: #FFFFFF;
+	background-color:#119C1C;
+}
+#aboutbutton {
+	color: #FFFFFF;
+	background-color:#1DB3D2;
+}
+#reglasbutton {
+	color: #FFFFFF;
+	background-color:#EE8012;
+}
+
+
 #map { height: 400px; width:700px;margin:20px 20px 20px 120px;}
 
 #confposicion {

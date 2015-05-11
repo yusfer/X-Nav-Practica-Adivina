@@ -42,8 +42,8 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li ><button id ="reglasbutton"type="button" class="btn btn-default">Reglas</button></li>
-				<li ><button id ="aboutbutton"type="button" class="btn btn-default">About</button></li>
+				<li ><button id ="reglasbutton"type="button" class="btn btn-default button">REGLAS</button></li>
+				<li ><button id ="aboutbutton"type="button" class="btn btn-default button">ABOUT</button></li>
 				<li class="dropdown">'+ 
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Juegos <span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
@@ -53,15 +53,15 @@
 					<li><button type="button" class ="cambiojuego">Juego 4</button></li>
 				</ul>
 				</li>
-				<li id="juegoseleccionado"> Juego seleccionado: TAL </li>
+				
 		  </ul>
 		  
 		  
 		  <ul class="nav navbar-nav navbar-right">
 			  
-			  
-		  <li ><button id ="reiniciarbutton"type="button" class="btn btn-default">Reiniciar Juego</button></li>
-		  <li ><button id ="startbutton"type="button" class="btn btn-default">Start!</button></li>
+		  <li id="juegoseleccionado"> Juego seleccionado: TAL </li>  
+		  <li ><button id ="reiniciarbutton"type="button" class="btn btn-default button">REINICIAR</button></li>
+		  <li ><button id ="startbutton"type="button" class="btn btn-default button">START!</button></li>
 		   </ul>
 		   </li>
 		   
@@ -71,10 +71,15 @@
 			</nav>
 		<!-- NAVBAR -->
 		</div>	
+		<div id="divhome"><!-- Solo lo que mostraremos en estado HOME, #fotos y #generalmap .hover()-->
+		
+		
+		</div>
+		
 		<div id="fotos" class="col-md-4"> <h1>FOTOS</h1> <p> tal tal tal</p> </div>	
 		<div id="generalmap" class="col-md-8">
 			<div id="map" > MAPA </div>
-			<button id="confposicion"> Confirmar Posición!</button>
+			<button id="confposicion" class="button"> Confirmar Posición!</button>
 		</div>	
 		
 		<p>_</p>
