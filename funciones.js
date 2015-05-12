@@ -1,4 +1,13 @@
 
+//////// texto de información   ///////
+var datareglas = "Selecciona un tipo de juego, una dificultad y pulsa Start! Intenta adivinar con el menor número de fotos la situación geográfica de nuestro objetivo y alcanzarás una mayor puntuación. Pincha en el mapa y cuando tengas decidida tu respuesta final, clickea en Confirmar Posición!"
+var dataabout = "Juego Adivina Donde Está creado por Fernando Yustas Ruiz para la asignatura Desarrollo de Aplicaciones Telemáticas (DAT)"
+
+
+
+
+
+
 //////////****** FUNCIONES CREACIÓN DINÁMICA BOOTSTRAP ******//////////
 //// estas funciones crearán dinámicamente el bootstrap según  ciertos////
 //// parámetros en un array (generalmente) y retornarán el string que será ////
@@ -228,10 +237,33 @@ $(document).ready(function() {
 		});	
 	
 	
-	$("#fotos p").html("pedo")
-
-
-
-
+	// creación de div information oculto, para incluir tema Reglas y About
+	(function(){
+		$('<div class="information"></div>').hide().appendTo($('body'));
+	}());
+	
+	
+	function mostrarInfo(data){
+		
+			var dimension = Math.ceil($(window).width()/4)
+			$('.information').html(data + '<br><br><br><br><br><span  id="closeLink">Close</span>').css({'left':30, 'width':(4*dimension)/3,'top':150})
+			.show()
+			$("#closeLink").click(function(){			//Debe estar dentro del contexto
+	
+				$('.information').hide()
+	})
+		}
+		
+	$("#reglasbutton").click(function(){		
+	
+		mostrarInfo(datareglas)
+	})
+	$("#aboutbutton").click(function(){		
+	
+		mostrarInfo(dataabout)
+	})
+	
+	
+	
 
 });
