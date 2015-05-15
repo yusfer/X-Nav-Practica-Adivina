@@ -1,0 +1,324 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-3.7037901999999576,40.4167754]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Madrid"
+		},
+		"id": 1
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -0.12775829999998223,51.5073509]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Londres"
+		},
+		"id": 2
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [12.496365500000024,41.9027835 ]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Roma"
+		},
+		"id": 3
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 2.3522219000000177,48.856614]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "París"
+		},
+		"id": 4
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [13.404953999999975,52.52000659999999 ]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Berlín"
+		},
+		"id": 5
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -9.139336599999979,38.7222524]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Lisboa"
+		},
+		"id": 6
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [21.012228700000037,52.2296756 ]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Varsovia"
+		},
+		"id": 7
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -6.260309699999993,53.3498053]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Dublín"
+		},
+		"id": 8
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 19.04023499999994,47.497912]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Budapest"
+		},
+		"id": 9
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 33.12390490000007,35.0400155]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Nicosia"
+		},
+		"id": 10
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -6.849812899999961,33.9715904]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Rabat"
+		},
+		"id": 11
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 31.23571160000006,30.0444196]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "El Cairo"
+		},
+		"id": 12
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -17.366028599999936,14.7645042]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Dakar"
+		},
+		"id": 13
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 9.537499000000025,33.886917]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Túnez"
+		},
+		"id": 14
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 149.12868430000003,-35.2819998]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Camberra"
+		},
+		"id": 15
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 139.69170639999993,35.6894875]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Tokyo"
+		},
+		"id": 16
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 116.40739499999995,39.904211]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Pekín"
+		},
+		"id": 17
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 125.82799590000002,38.9613433]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Pionyang"
+		},
+		"id": 18
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 54.36666700000001,24.466667]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Abu Dabi"
+		},
+		"id": 19
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 77.20902120000005,28.6139391]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Nueva Delhi"
+		},
+		"id": 20
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 35.21370999999999,31.768319]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Jerusalén"
+		},
+		"id": 21
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-77.03687070000001, 38.9071923]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Washington"
+		},
+		"id": 22
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -99.13320799999997,19.4326077]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "México D.F."
+		},
+		"id": 23
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -75.69719309999999,45.4215296]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Ottawa"
+		},
+		"id": 24
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -58.38159310000003,-34.6037232]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Buenos Aires"
+		},
+		"id": 25
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -47.882165799999996,-15.7942287]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Brasilia"
+		},
+		"id": 26
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -77.0427934,-12.046374]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Lima"
+		},
+		"id": 27
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -78.46783820000002,-0.1806532]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Quito"
+		},
+		"id": 28
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -74.07583299999999,4.598056000000001]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Bogotá"
+		},
+		"id": 29
+            }
+	]
+}

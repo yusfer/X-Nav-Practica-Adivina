@@ -200,9 +200,10 @@ $(document).ready(function() {
 		//console.log(e)
 	});
 	
-	/*
+	
 	$("#startbutton").click(function(){
-		$.getJSON("geojson/geojsonbasico.json",function(data){
+		ocultarHome()
+		$.getJSON("juegos/Hispania.json",function(data){
 			//L.geoJson(data).addTo(map)
 			L.geoJson(data,{onEachFeature:onEachFeature}).addTo(map)
 		
@@ -216,7 +217,7 @@ $(document).ready(function() {
     if (feature.properties && feature.properties.Name) {
         layer.bindPopup(feature.properties.Name);
 		}
-	}*/
+	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////     FIN MAPAS LEAFLETS    //////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -275,16 +276,16 @@ $(document).ready(function() {
 		
 	}
 	function mapayfotos(){		//proceso de elección de UNO de los geojson --> deberemos llamarle cuando tema puntuaciones
-		$.getJSON("geojson/geojsonbasico.json",function(data){
+		$.getJSON("juegos/Capitales.json",function(data){
 			local = nuevoGeoJson(data)
 			fotosAlCarrousel(local.properties.Name)	
 		})
-	}
+	}/*
 	$("#startbutton").click(function(){
 		ocultarHome()
 		mapayfotos()
 		
-	})	
+	})	*/
 		
 	$("#reiniciarbutton").click(function(){		//esto se hará automático
 	

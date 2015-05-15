@@ -1,0 +1,203 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-8.544844499999954,42.8782132]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Santiago de Compostela"
+		},
+		"id": 1
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -5.849388699999963,43.3619145]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Oviedo"
+		},
+		"id": 2
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-3.8099803000000065,43.46230569999999 ]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Santander"
+		},
+		"id": 3
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -2.681791800000042,42.8591656]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Vitoria"
+		},
+		"id": 4
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [2.1734034999999494,41.3850639 ]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Barcelona"
+		},
+		"id": 5
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -1.645774500000016,42.812526]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Pamplona"
+		},
+		"id": 6
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-2.444985200000019,42.4627195 ]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Logroño"
+		},
+		"id": 7
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -3.7037901999999576,40.4167754]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Madrid"
+		},
+		"id": 8
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -3.7037901999999576,40.4167754]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Valencia"
+		},
+		"id": 9
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -4.724532100000033,41.652251]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Valladolid"
+		},
+		"id": 10
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -4.02732309999999,39.8628316]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Toledo"
+		},
+		"id": 11
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -6.349197499999946,38.9142955]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Mérida"
+		},
+		"id": 12
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -1.1306544000000258,37.9922399]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Murcia"
+		},
+		"id": 13
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -5.984458899999936,37.3890924]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Sevilla"
+		},
+		"id": 14
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -5.321345500000007,35.8893874]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Ceuta"
+		},
+		"id": 15
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -2.9380972999999813,35.2922775]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Melilla"
+		},
+		"id": 16
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -15.436257399999931,28.1235459]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Las Palmas de Gran Canaria"
+		},
+		"id": 17
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -16.57153399999993,28.2785654]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Santa Cruz de Tenerife"
+		},
+		"id": 18
+            }
+	]
+}
