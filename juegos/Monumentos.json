@@ -1,0 +1,258 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-3.692814099999964,40.4195404]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Cibeles"
+		},
+		"id": 1
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ -4.117791000000011,40.947991]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Acueducto de Segovia"
+		},
+		"id": 2
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [12.492230999999947,41.89021 ]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Coliseo de Roma"
+		},
+		"id": 3
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [ 78.04215499999998,27.175015]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Taj Mahal"
+		},
+		"id": 4
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [10.635651100000018,43.6625962]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Torre de Pisa"
+		},
+		"id": 5
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [2.294481000000019,48.85837]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Torre Eiffiel"
+		},
+		"id": 6
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-43.210487,-22.951916]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Cristo Redentor"
+		},
+		"id": 7
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-4.7793870000000425,37.878906]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Mezquita de Córdoba"
+		},
+		"id": 8
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [31.132495000000063,29.977296]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Pirámides de Giza"
+		},
+		"id": 9
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [35.44258100000002,30.325173]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Petra"
+		},
+		"id": 10
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-72.54522700000001,-13.167352]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Machu Picchu"
+		},
+		"id": 11
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-0.12462500000003729,51.500729]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Big Ben"
+		},
+		"id": 12
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-3.5881409999999505,37.176078]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "La Alhambra"
+		},
+		"id": 13
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-74.04449999999997,40.689249]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Estatua de la Libertad"
+		},
+		"id": 14
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-109.42500000000001,-27.15]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Isla de Pascua"
+		},
+		"id": 15
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [23.72574899999995,37.971532]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Acrópolis de Atenas"
+		},
+		"id": 16
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [151.215281,-33.856898]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Teatro de la Ópera"
+		},
+		"id": 17
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [12.453936999999996,41.902167]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Basílica de San Pedro"
+		},
+		"id": 18
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-73.9855,40.748462]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Empire State"
+		},
+		"id": 19
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [9.191925999999967,45.464098]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Duomo de Milán"
+		},
+		"id": 20
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [4.341546999999991,50.894941]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Atomium"
+		},
+		"id": 21
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [-77.00905, 38.889939]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "United States Capitol"
+		},
+		"id": 22
+            },
+            {
+		"geometry": {
+                    "type": "Point",
+                    "coordinates": [37.61749899999995,55.752023]
+		},
+		"type": "Feature",
+		"properties": {
+                    "Name": "Kremlin"
+		},
+		"id": 23
+            }
+	]
+}

@@ -293,6 +293,7 @@ $(document).ready(function() {
 		var  array = []
 		for(i=0;i<10;i++){
 			//list = list + "<li><img src=" + data.items[i].media.m+ "></li>"
+			if(data.items[i]==undefined){break}
 			array.push(data.items[i].media.m)
 		}
 		var carrousel = creoCarrousel(array)	//funcion que crea carrousel de tamaño 10
