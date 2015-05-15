@@ -2,8 +2,45 @@
 //////// texto de información   ///////
 var datareglas = "Selecciona un tipo de juego, una dificultad y pulsa Start! Intenta adivinar con el menor número de fotos la situación geográfica de nuestro objetivo y alcanzarás una mayor puntuación. Pincha en el mapa y cuando tengas decidida tu respuesta final, clickea en Confirmar Posición!"
 var dataabout = "Juego Adivina Donde Está creado por Fernando Yustas Ruiz para la asignatura Desarrollo de Aplicaciones Telemáticas (DAT)"
-var datahome = "Emocionante juego en el que tendrás que mostrar tus habilidades geográficas y de asociación. Pasa entretenidos e instructivos ratos jugando con tus amigos y compitiendo por ver quién obtiene una mayor puntuación en cada uno de los diferentes juegos. Selecciona un juego, pulsa Start! y a jugar!"
-
+var datahome = "Emocionante juego en el que tendrás que mostrar tus habilidades geográficas y de asociación visual. Pasa entretenidos e instructivos ratos jugando con tus amigos y compitiendo por ver quién obtiene una mayor puntuación en cada uno de los diferentes juegos. Selecciona un juego, pulsa Start! y a jugar!"
+// carousel de imágenes de mapas  para el home
+var homecarousel ='<div id="homecarousel" class="carousel slide" data-ride="carousel">'+
+      
+     ' <div class="carousel-inner" style="text-align: center;" role="listbox">'+
+     '   <div class="item active">'+
+      '    <img src="images/world1.jpg" alt="First slide" style="display: inline-block;widht:600px;height:350px;">'+
+       '   <div class="container">'+
+       '     <div class="carousel-caption">'+
+              
+      '      </div>'+
+        '  </div>'+
+    '    </div>'+
+      '  <div class="item">'+
+      '    <img src="images/world2.jpg" alt="Second slide" style="display: inline-block;widht:600px;height:350px;">'+
+        '  <div class="container">'+
+       '     <div class="carousel-caption">'+
+        '    </div>'+
+       '   </div>'+
+       ' </div>'+
+       ' <div class="item">'+
+       '   <img src="images/world3.jpg" alt="Third slide" style="display: inline-block;widht:600px;height:350px;">'+
+       '   <div class="container">'+
+       '     <div class="carousel-caption">'+
+             
+       '     </div>'+
+      '    </div>'+
+      '  </div>'+
+       ' <div class="item">'+
+       '   <img src="images/world4.jpg" alt="Third slide" style="display: inline-block;widht:600px;height:350px;">'+
+       '   <div class="container">'+
+       '     <div class="carousel-caption">'+
+             
+       '     </div>'+
+      '    </div>'+
+      '  </div>'+
+      '  </div>'+
+      '  </div>'+
+      '<p>_</p>'
 
 
 
@@ -13,7 +50,7 @@ var datahome = "Emocionante juego en el que tendrás que mostrar tus habilidades
 //// parámetros en un array (generalmente) y retornarán el string que será ////
 //// incluido en el htmlen forma $("#id").html(stringcreado) o similares////
 
-//array con 10 fotos
+//array con 10 fotos para las descargas de flickr
 function creoCarrousel(array){
 	var carousel = ""
 	
@@ -116,8 +153,24 @@ function creoCarrousel(array){
 ///////////////////////////////////////////////////////////////////////
 $(document).ready(function() {
 	
+	
+	function mostrarHome(){
+		
+		$('#divhome').show()
+		$('#fotos').hide()
+		$('#generalmap').hide()
+	}	
+	function ocultarHome(){
+		
+		$('#divhome').hide()
+		$('#fotos').show()
+		$('#generalmap').show()
+	}	
+	//mostrarHome()
+	ocultarHome()
 	// dom cargado --> texto de información a #textohome
-	//$("#textohome").html(datahome)
+	$("#textohome").html(datahome)
+	$("#fotoshome").html(homecarousel)
 	
 	
 	//////////////////////// RELACIONADOS CON MAPAS LEAFLETS ///////////////////////////////////////
@@ -272,15 +325,8 @@ $(document).ready(function() {
 	
 		mostrarHome()
 	})
-	mostrarHome()
-	
-	function mostrarHome(){
 		
-		$('#divhome').show()
-		$('#fotos').hide()
-		$('#generalmap').hide()	
 		
-	}
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////     FIN RELACIONADO CON HOME    /////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////

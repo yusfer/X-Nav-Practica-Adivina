@@ -3,6 +3,7 @@
 div.backgroundid{
 	background-image: url(../images/passport1.jpg);    
     background-repeat:repeat;
+    height:800px;
 
 }
 
@@ -144,8 +145,16 @@ top:120px;
 }
 
 #textohome {
-	
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
 	font-size: 18px;
+	text-align: center;
+	padding: 30px;
+	margin: 10px 100px 10px 50px;
+	background: wheat;
+	border: 2px double grey;
+	border-radius: 15px;
+	border-width: 5px;
 }
 
 
