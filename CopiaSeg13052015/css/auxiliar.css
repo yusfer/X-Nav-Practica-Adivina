@@ -23,7 +23,6 @@ footer {
 	border-radius: 50px;
 	color:#FFFFFF;
 	cursor:pointer;
-	font-family: MyFont;
 }
 
 
@@ -117,37 +116,5 @@ top:120px;
 #closeLink:hover{
 	text-decoration: underline;
 }
-
-@font-face {
- font-family: MyFont;
- font-style: serif;
- font-weight: normal;
- src: url(/fonts/cooper_std_black.woff);
- }
- 
-#titulohome {
-	font-family: MyFont;
-	font-size: 50px;
-	color: #1035A8;
-	/*background-color: #7EB8ED;*/
-	background: linear-gradient(#FFFFFF, #59CEF1);
-	margin: 40px 200px 50px 200px;
-	border-style: solid;
-    border-width: 5px;
-    padding: 20px;
-    width: 840px;
-    text-align: center;
-	border-radius: 15px;
-	border-width: 10px;
-	box-shadow:20px 5px 20px #000000;
-
-}
-
-#textohome {
-	
-	font-size: 18px;
-}
-
-
 
 

@@ -2,7 +2,7 @@
 //////// texto de información   ///////
 var datareglas = "Selecciona un tipo de juego, una dificultad y pulsa Start! Intenta adivinar con el menor número de fotos la situación geográfica de nuestro objetivo y alcanzarás una mayor puntuación. Pincha en el mapa y cuando tengas decidida tu respuesta final, clickea en Confirmar Posición!"
 var dataabout = "Juego Adivina Donde Está creado por Fernando Yustas Ruiz para la asignatura Desarrollo de Aplicaciones Telemáticas (DAT)"
-var datahome = "Emocionante juego en el que tendrás que mostrar tus habilidades geográficas y de asociación. Pasa entretenidos e instructivos ratos jugando con tus amigos y compitiendo por ver quién obtiene una mayor puntuación en cada uno de los diferentes juegos. Selecciona un juego, pulsa Start! y a jugar!"
+
 
 
 
@@ -115,9 +115,6 @@ function creoCarrousel(array){
 ///////////////////////    DOM JQUERY   ///////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 $(document).ready(function() {
-	
-	// dom cargado --> texto de información a #textohome
-	//$("#textohome").html(datahome)
 	
 	
 	//////////////////////// RELACIONADOS CON MAPAS LEAFLETS ///////////////////////////////////////
@@ -272,7 +269,7 @@ $(document).ready(function() {
 	
 		mostrarHome()
 	})
-	mostrarHome()
+	
 	
 	function mostrarHome(){
 		
