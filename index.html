@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="adivinaapp.manifest">
 	<head>	
 		<meta charset="utf-8" />
 		<title> ¡Adivina Dónde Está! </title>
@@ -44,22 +44,22 @@
 			<ul class="nav navbar-nav">
 				<li ><button id ="reglasbutton"type="button" class="btn btn-default button">REGLAS</button></li>
 				<li ><button id ="aboutbutton"type="button" class="btn btn-default button">ABOUT</button></li>
-				<li class="dropdown">'+ 
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Juegos <span class="caret"></span></a>
-				<ul class="dropdown-menu" role="menu">
-					<li><button type="button" class ="cambiojuego">Juego 1</button></li>
-					<li><button type="button" class ="cambiojuego">Juego 2</button></li>
-					<li><button type="button" class ="cambiojuego">Juego 3</button></li>
-					<li><button type="button" class ="cambiojuego">Juego 4</button></li>
-				</ul>
-				</li>
+				<li id="puntuaciontotal"> Puntuación usuario:<span id="numpuntuacion">0</span> </li>
 				
 		  </ul>
 		  
 		  
 		  <ul class="nav navbar-nav navbar-right">
-			  
-		  <li id="juegoseleccionado"> Juego seleccionado: TAL </li>  
+		  <li class="dropdown">'+ 
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Juegos <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><button type="button" class ="cambiojuego">Capitales</button></li>
+					<li><button type="button" class ="cambiojuego">Monumentos</button></li>
+					<li><button type="button" class ="cambiojuego">Hispania</button></li>
+					<li><button type="button" class ="cambiojuego">Juego 4</button></li>
+				</ul>
+				</li>
+		  <li id="juegoseleccionado"> Juego:<span id="mijuego">Capitales</span> </li>  
 		  <li ><button id ="reiniciarbutton"type="button" class="btn btn-default button">REINICIAR</button></li>
 		  <li ><button id ="startbutton"type="button" class="btn btn-default button">START!</button></li>
 		   </ul>

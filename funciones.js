@@ -2,7 +2,7 @@
 //////// texto de información   ///////
 var datareglas = "Selecciona un tipo de juego, una dificultad y pulsa Start! Intenta adivinar con el menor número de fotos la situación geográfica de nuestro objetivo y alcanzarás una mayor puntuación. Pincha en el mapa y cuando tengas decidida tu respuesta final, clickea en Confirmar Posición! En mitad de una partida, puedes elegir un nuevo juego y dificultad y pulsando en Reiniciar Juego, empezarás uno nuevo según tu elección descartando lo hecho en el anterior"
 var dataabout = "Juego Adivina Donde Está creado por Fernando Yustas Ruiz para la asignatura Desarrollo de Aplicaciones Telemáticas (DAT)"
-var datahome = "Emocionante juego en el que tendrás que mostrar tus habilidades geográficas y de asociación visual. Pasa entretenidos e instructivos ratos jugando con tus amigos y compitiendo por ver quién obtiene una mayor puntuación en cada uno de los diferentes juegos. Selecciona un juego, pulsa Start! y a jugar!"
+var datahome = "Emocionante juego en el que tendrás que mostrar tus habilidades geográficas y de asociación visual. Pasa entretenidos e instructivos ratos jugando con tus amigos y compitiendo por ver quién obtiene una mayor puntuación en cada uno de los diferentes juegos. Selecciona un juego, pulsa Start! y ¡A JUGAR!"
 // carousel de imágenes de mapas  para el home
 var homecarousel ='<div id="homecarousel" class="carousel slide" data-ride="carousel">'+
       
@@ -42,7 +42,30 @@ var homecarousel ='<div id="homecarousel" class="carousel slide" data-ride="caro
       '  </div>'+
       '<p>_</p>'
 
+////////////////////////////////////////////////////////////////////////////
+/////////  función para calcular distancia entre coordenadas  //////////////
+/////// vía: http://www.mapanet.eu/Resources/Script-Distance.htm  //////////
+////////////////////////////////////////////////////////////////////////////
 
+function dist(lat1, lon1, lat2, lon2)
+  {
+  rad = function(x) {return x*Math.PI/180;}
+
+  var R     = 6378.137;                          //Radio de la tierra en km
+  var dLat  = rad( lat2 - lat1 );
+  var dLong = rad( lon2 - lon1 );
+
+  var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  var d = R * c;
+
+  return d.toFixed(3);                      //Retorna tres decimales
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 
 //////////****** FUNCIONES CREACIÓN DINÁMICA BOOTSTRAP ******//////////
@@ -201,15 +224,16 @@ $(document).ready(function() {
 	});
 	
 	
-	$("#startbutton").click(function(){
+	/*$("#startbutton").click(function(){
 		ocultarHome()
-		$.getJSON("juegos/Hispania.json",function(data){
+		var juego = $("#mijuego").html()
+		$.getJSON("juegos/"+juego+".json",function(data){
 			//L.geoJson(data).addTo(map)
 			L.geoJson(data,{onEachFeature:onEachFeature}).addTo(map)
 		
 		})		
 		
-	})
+	})*/
 			//usando esto como prueba --> geolocaliza el geojson
 	
 	function onEachFeature(feature, layer) {
@@ -234,7 +258,8 @@ $(document).ready(function() {
 	
 	
 	//////////////////////// RELACIONADOS CON FLICKR JSON ///////////////////////////////////////
-	//var datos
+	var latactual
+	var lngactual
 	var usadas = [] //array que recopilo los índices usados (cuando estén vistos todos, puntuación y al home, por ejemplo)
 	
 	
@@ -276,16 +301,20 @@ $(document).ready(function() {
 		
 	}
 	function mapayfotos(){		//proceso de elección de UNO de los geojson --> deberemos llamarle cuando tema puntuaciones
-		$.getJSON("juegos/Capitales.json",function(data){
+		if (flag){map.removeLayer(marker)} //borro el anterior popup
+		var juego = $("#mijuego").html()	// selecciono el juego determinado
+		$.getJSON("juegos/"+juego+".json",function(data){
 			local = nuevoGeoJson(data)
+			latactual = local.geometry.coordinates[1]
+			lngactual = local.geometry.coordinates[0]
 			fotosAlCarrousel(local.properties.Name)	
 		})
-	}/*
+	}
 	$("#startbutton").click(function(){
 		ocultarHome()
 		mapayfotos()
 		
-	})	*/
+	})
 		
 	$("#reiniciarbutton").click(function(){		//esto se hará automático
 	
@@ -298,12 +327,19 @@ $(document).ready(function() {
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	$(".cambiojuego").click(function(){		// cambiamos situación de "juego actual"
 		
-			$("#juegoseleccionado").html("Juego seleccionado: " + $(this).html())
+			$("#mijuego").html($(this).html())
 			
 		});	
-	$("#confposicion").click(function(){		// cambiamos situación de "juego actual"
+	$("#confposicion").click(function(){		// qué pasa cuando confirmo posición??
+												// comparo distancia entre data.coords y marker.coords (función que lo hace)
+												// obtengo puntuación (por medio de función) y sumo a actual y global del infinito
+												// continuo con nuevo punto a localizar (si no hay más, a home por ejemplo)
 		
-				console.log(marker)
+			console.log(marker)
+			console.log("lat" + marker._latlng.lat + "long" + marker._latlng.lng)
+			console.log("lat" + latactual + "long" + lngactual)
+			var distancia = dist(marker._latlng.lat, marker._latlng.lng,latactual,lngactual)		//calculo distancia entre 2 coordenadas
+			console.log(distancia)
 		});	
 	
 	

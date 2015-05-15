@@ -28,7 +28,7 @@ footer {
 }
 
 
-#juegoseleccionado{
+#juegoseleccionado, #puntuaciontotal{
 	font-family: "Courier", Times,fantasy;
 	font-weight: bold;
 	font-size: 22px;
@@ -141,11 +141,10 @@ top:120px;
 	/*background-color: #7EB8ED;*/
 	background: linear-gradient(#FFFFFF, #59CEF1);
 	margin: 40px 200px 50px 200px;
-	border-style: solid;
-    border-width: 5px;
     padding: 20px;
     width: 840px;
     text-align: center;
+    border-style: solid;
 	border-radius: 15px;
 	border-width: 10px;
 	box-shadow:20px 5px 20px #000000;
@@ -159,10 +158,13 @@ top:120px;
 	text-align: center;
 	padding: 30px;
 	margin: 10px 100px 10px 50px;
-	background: wheat;
-	border: 2px double grey;
+	color: #0E7D19;
+	background: linear-gradient(#FFFFFF, #82EA87);
+	/*background: wheat;*/
+	border-style: solid;
 	border-radius: 15px;
-	border-width: 5px;
+	border-width: 10px;
+	box-shadow:20px 5px 20px #000000;
 }
 
 
