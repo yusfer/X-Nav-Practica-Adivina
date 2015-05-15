@@ -57,10 +57,18 @@ footer {
 #startbutton {
 	color: #FFFFFF;
 	background-color:#C91010;
+	font-size: 20px;
+}
+#startbutton:hover{
+	font-size: 28px;
 }
 #reiniciarbutton {
 	color: #FFFFFF;
 	background-color:#119C1C;
+	font-size: 20px;
+}
+#reiniciarbutton:hover{
+	font-size: 28px;
 }
 #aboutbutton {
 	color: #FFFFFF;

@@ -1,6 +1,6 @@
 
 //////// texto de información   ///////
-var datareglas = "Selecciona un tipo de juego, una dificultad y pulsa Start! Intenta adivinar con el menor número de fotos la situación geográfica de nuestro objetivo y alcanzarás una mayor puntuación. Pincha en el mapa y cuando tengas decidida tu respuesta final, clickea en Confirmar Posición!"
+var datareglas = "Selecciona un tipo de juego, una dificultad y pulsa Start! Intenta adivinar con el menor número de fotos la situación geográfica de nuestro objetivo y alcanzarás una mayor puntuación. Pincha en el mapa y cuando tengas decidida tu respuesta final, clickea en Confirmar Posición! En mitad de una partida, puedes elegir un nuevo juego y dificultad y pulsando en Reiniciar Juego, empezarás uno nuevo según tu elección descartando lo hecho en el anterior"
 var dataabout = "Juego Adivina Donde Está creado por Fernando Yustas Ruiz para la asignatura Desarrollo de Aplicaciones Telemáticas (DAT)"
 var datahome = "Emocionante juego en el que tendrás que mostrar tus habilidades geográficas y de asociación visual. Pasa entretenidos e instructivos ratos jugando con tus amigos y compitiendo por ver quién obtiene una mayor puntuación en cada uno de los diferentes juegos. Selecciona un juego, pulsa Start! y a jugar!"
 // carousel de imágenes de mapas  para el home
@@ -137,7 +137,7 @@ function creoCarrousel(array){
         '  </div>'+
      '   </div>'+
     '  </div>'+
-     ' <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">'+
+     ' <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">'+	//esto tenemos que quitarlo (izda y dcha en carousel)
       '  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>'+
       '  <span class="sr-only">Previous</span>'+
     '  </a>'+
@@ -157,20 +157,27 @@ $(document).ready(function() {
 	function mostrarHome(){
 		
 		$('#divhome').show()
+		$('#startbutton').show()
 		$('#fotos').hide()
 		$('#generalmap').hide()
+		$('#reiniciarbutton').hide()
+		
 	}	
 	function ocultarHome(){
 		
 		$('#divhome').hide()
+		$('#startbutton').hide()
 		$('#fotos').show()
 		$('#generalmap').show()
+		$('#reiniciarbutton').show()
+		
+
 	}	
-	//mostrarHome()
-	ocultarHome()
-	// dom cargado --> texto de información a #textohome
-	$("#textohome").html(datahome)
-	$("#fotoshome").html(homecarousel)
+
+
+	
+	
+	
 	
 	
 	//////////////////////// RELACIONADOS CON MAPAS LEAFLETS ///////////////////////////////////////
@@ -214,20 +221,24 @@ $(document).ready(function() {
 	//////////////////////////     FIN MAPAS LEAFLETS    //////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	//ocultarHome()
+	// dom cargado --> texto de información a #textohome, fotos a carousel y mostramos HOME
+	$("#textohome").html(datahome)
+	$("#fotoshome").html(homecarousel)
+	mostrarHome()		// ocultamos mapa tras crearlo porque sino, da problemas!
+	
+	
+	
+	
+	
 	
 	//////////////////////// RELACIONADOS CON FLICKR JSON ///////////////////////////////////////
-	var datos
-	var usadas = [] //array que recopilo los índices usados
-	$("#startbutton").click(function(){
-		
-		$.getJSON("geojson/geojsonbasico.json",function(data){
-			datos = data
-		})
-			
-	})
+	//var datos
+	var usadas = [] //array que recopilo los índices usados (cuando estén vistos todos, puntuación y al home, por ejemplo)
 	
-	// métodos que coge una ciudad no usada
-	function nuevoGeoJson(){
+	
+	// métodos que coge una ciudad no usada (recibe el json como datos)
+	function nuevoGeoJson(datos){
 		num = Math.round(Math.random()*(datos.features.length-1))
 		console.log(num)
 		var paso = 1
@@ -241,7 +252,7 @@ $(document).ready(function() {
 			console.log(local.properties.Name)
 			}
 		if(local==undefined){
-			return nuevoGeoJson()
+			return nuevoGeoJson(datos)
 		}else{
 			return local
 			}
@@ -258,24 +269,26 @@ $(document).ready(function() {
 			//list = list + "<li><img src=" + data.items[i].media.m+ "></li>"
 			array.push(data.items[i].media.m)
 		}
-		var carrousel = creoCarrousel(array)	//funcion que crea carrousel de tamaño 5
+		var carrousel = creoCarrousel(array)	//funcion que crea carrousel de tamaño 10
 		$("#fotos").html(carrousel);
 	})
 		
 	}
+	function mapayfotos(){		//proceso de elección de UNO de los geojson --> deberemos llamarle cuando tema puntuaciones
+		$.getJSON("geojson/geojsonbasico.json",function(data){
+			local = nuevoGeoJson(data)
+			fotosAlCarrousel(local.properties.Name)	
+		})
+	}
+	$("#startbutton").click(function(){
+		ocultarHome()
+		mapayfotos()
 		
-		
+	})	
 		
 	$("#reiniciarbutton").click(function(){		//esto se hará automático
 	
-		local = nuevoGeoJson()
-		/*var marker2			//pruebas --> sacar geojson y colocar marker
-		marker2 = new L.marker(local.geometry.coordinates).addTo(map)
-		map.addLayer(marker2)
-		marker2.bindPopup(local.properties.Name)
-		.openPopup();*/
-		// funcion sacar fotos flickr y colocar carrousel
-		fotosAlCarrousel(local.properties.Name)
+		mapayfotos()
 			
 	})
 	
