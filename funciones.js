@@ -63,7 +63,45 @@ function dist(lat1, lon1, lat2, lon2)
 }
 
 
+////////////////////////////////////////////////////////////////////////////
+/////////  función para calcular la puntuación de una jugada  //////////////
+/////// in: distancia, fotos vistas y tipo juego; out:puntuación  //////////
+////////////////////////////////////////////////////////////////////////////
 
+function calcpunt(dist,numfotos,tipo){		//tipo para si Hispania, se puntúa diferente
+	var puntuacion
+	// de momento: puntuacion = dist * numfotos
+	puntuacion = dist*numfotos
+	return puntuacion	
+}
+
+////////////////////////////////////////////////////////////////////////
+/////////  función para rellenar el cuadro de puntuación  //////////////
+/////// in: respuesta, distancia, fotos vistas y si hay fin   //////////
+/////// out: html a incluir en elemento #cuadropunt   //////////
+/////////////////////////////////////////////////////////////////////////////
+
+function rellenoCuadroPunt(nombre,dist,fotos,findepartida,puntfinal){
+	
+	var punt = calcpunt(dist,fotos,1)
+	var boton = ""
+	var texto = ""
+	texto =" Respuesta: " + nombre + "<br>" +
+			"Distancia: " + dist + "<br>" +
+			"Fotos vistas: " + fotos + "<br>" +
+			"Puntuación: " + punt + "<br>"
+			
+	if(findepartida){
+		// botón fin del juego
+		texto = texto + "Puntuación final : " + puntfinal + "<br>"
+		boton = '<button id ="findejuego"class="button"> Fin del Juego </button>'
+	}else{
+		// botón siguiente
+		boton = '<button id ="sigjuego"class="button"> Siguiente prueba </button>'
+	}
+	texto = texto + boton
+	return texto
+}
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 
@@ -176,6 +214,13 @@ function creoCarrousel(array){
 ///////////////////////////////////////////////////////////////////////
 $(document).ready(function() {
 	
+	var latactual
+	var lngactual
+	var respuesta
+	var todasusadas = 0
+	var puntfinal = 0		//la de cada partida
+	var puntfinaldelinfinito = 0	// la del usuario (luego, localStorage)
+	var usadas = [] //array que recopilo los índices usados (cuando estén vistos todos, puntuación y al home, por ejemplo)
 	
 	function mostrarHome(){
 		
@@ -184,6 +229,7 @@ $(document).ready(function() {
 		$('#fotos').hide()
 		$('#generalmap').hide()
 		$('#reiniciarbutton').hide()
+		usadas = []		//cada vez que voy a home, reinicio las usadas
 		
 	}	
 	function ocultarHome(){
@@ -258,9 +304,7 @@ $(document).ready(function() {
 	
 	
 	//////////////////////// RELACIONADOS CON FLICKR JSON ///////////////////////////////////////
-	var latactual
-	var lngactual
-	var usadas = [] //array que recopilo los índices usados (cuando estén vistos todos, puntuación y al home, por ejemplo)
+	
 	
 	
 	// métodos que coge una ciudad no usada (recibe el json como datos)
@@ -276,6 +320,7 @@ $(document).ready(function() {
 			local = datos.features[num]
 			usadas.push(num)
 			console.log(local.properties.Name)
+			if (usadas.length == datos.features.length) {todasusadas = 1;alert("cambio valor todasusadas")}
 			}
 		if(local==undefined){
 			return nuevoGeoJson(datos)
@@ -301,13 +346,16 @@ $(document).ready(function() {
 	})
 		
 	}
+	
 	function mapayfotos(){		//proceso de elección de UNO de los geojson --> deberemos llamarle cuando tema puntuaciones
+		$('#confposicion').show()
 		if (flag){map.removeLayer(marker)} //borro el anterior popup
 		var juego = $("#mijuego").html()	// selecciono el juego determinado
 		$.getJSON("juegos/"+juego+".json",function(data){
 			local = nuevoGeoJson(data)
 			latactual = local.geometry.coordinates[1]
 			lngactual = local.geometry.coordinates[0]
+			respuesta = local.properties.Name		// para el tema de pasar respuesta a cuadro final
 			fotosAlCarrousel(local.properties.Name)	
 		})
 	}
@@ -318,7 +366,8 @@ $(document).ready(function() {
 	})
 		
 	$("#reiniciarbutton").click(function(){		//esto se hará automático
-	
+		
+		usadas = []		//cada vez que reinicio juego, a cero las usadas
 		mapayfotos()
 			
 	})
@@ -336,17 +385,20 @@ $(document).ready(function() {
 												// obtengo puntuación (por medio de función) y sumo a actual y global del infinito
 												// continuo con nuevo punto a localizar (si no hay más, a home por ejemplo)
 		
-			console.log(marker)
-			console.log("lat" + marker._latlng.lat + "long" + marker._latlng.lng)
-			console.log("lat" + latactual + "long" + lngactual)
 			var distancia = dist(marker._latlng.lat, marker._latlng.lng,latactual,lngactual)		//calculo distancia entre 2 coordenadas
 			console.log(distancia)
+			//var punt = calcpunt(distancia,1,1)
+			mostrarPunt(distancia)
 		});	
 	
 	
 	// creación de div information oculto, para incluir tema Reglas y About
 	(function(){
 		$('<div class="information"></div>').hide().appendTo($('body'));
+	}());
+	// creación de div puntuacion oculto, para mostrar puntuación tras jugada
+	(function(){
+		$('<div id="cuadropunt"></div>').hide().appendTo($('body'));
 	}());
 	
 	
@@ -358,8 +410,37 @@ $(document).ready(function() {
 			$("#closeLink").click(function(){			//Debe estar dentro del contexto
 	
 				$('.information').hide()
-	})
-		}
+		})
+	}
+	function mostrarPunt(distancia){
+			var dimension = Math.ceil($(window).width()/4)
+			var punt = calcpunt(distancia,1)
+			puntfinal = puntfinal + punt
+			$('#cuadropunt').html(rellenoCuadroPunt(respuesta,distancia,1,todasusadas,puntfinal)).css({'left':130, 'width':(4*dimension)/2,'top':150})
+			.show()
+			$('#confposicion').hide()
+			
+			$("#sigjuego").click(function(){		
+				$('#confposicion').show()
+				$('#cuadropunt').hide()
+				mapayfotos()
+				console.log(usadas.length)
+
+			})
+			
+			$("#findejuego").click(function(){		
+				// sumar a puntos totales del infinito, sumarlos al html y poner a cero los de partida
+				puntfinaldelinfinito = puntfinaldelinfinito + puntfinal
+				puntfinal = 0
+				$("#numpuntuacion").html(puntfinaldelinfinito)
+				$('#cuadropunt').hide()
+				mostrarHome()
+				// irnos a home
+		})
+	}
+	
+	
+	
 		
 	$("#reglasbutton").click(function(){		
 	

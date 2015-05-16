@@ -115,6 +115,19 @@ top:120px;
 	border-radius: 15px;
 	border-width: 5px;
 }
+#cuadropunt{
+	padding: 2ex;
+	position: absolute;
+	border: 2px double grey;
+	background: wheat;
+	height:550;
+	width: 150;
+	top:150;
+	text-align: center;
+	font-size: 18px;
+	border-radius: 15px;
+	border-width: 5px;
+}
 
 #closeLink {
 	font-size: 25px;
