@@ -219,7 +219,20 @@ $(document).ready(function() {
 	var respuesta
 	var todasusadas = 0
 	var puntfinal = 0		//la de cada partida
-	var puntfinaldelinfinito = 0	// la del usuario (luego, localStorage)
+		
+	// la del usuario (luego, localStorage)
+	function getpunt(){
+		console.log(localStorage.getItem("puntuacion"))
+		if(localStorage.getItem("puntuacion")!=0){
+			return localStorage.getItem("puntuacion")
+		}else{
+			return 5
+		}
+		
+		
+	}
+	var puntfinaldelinfinito = getpunt()
+	$("#numpuntuacion").html(puntfinaldelinfinito)
 	var usadas = [] //array que recopilo los índices usados (cuando estén vistos todos, puntuación y al home, por ejemplo)
 	
 	function mostrarHome(){
@@ -431,6 +444,7 @@ $(document).ready(function() {
 			$("#findejuego").click(function(){		
 				// sumar a puntos totales del infinito, sumarlos al html y poner a cero los de partida
 				puntfinaldelinfinito = puntfinaldelinfinito + puntfinal
+				localStorage.setItem("puntuacion",puntfinaldelinfinito)
 				puntfinal = 0
 				$("#numpuntuacion").html(puntfinaldelinfinito)
 				$('#cuadropunt').hide()
