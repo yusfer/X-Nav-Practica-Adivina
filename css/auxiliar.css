@@ -118,6 +118,8 @@ top:120px;
 #cuadropunt{
 	padding: 2ex;
 	position: absolute;
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
 	border: 2px double grey;
 	background: wheat;
 	height:550;

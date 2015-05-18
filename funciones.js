@@ -4,7 +4,7 @@ var datareglas = "Selecciona un tipo de juego, una dificultad y pulsa Start! Int
 var dataabout = "Juego Adivina Donde Está creado por Fernando Yustas Ruiz para la asignatura Desarrollo de Aplicaciones Telemáticas (DAT)"
 var datahome = "Emocionante juego en el que tendrás que mostrar tus habilidades geográficas y de asociación visual. Pasa entretenidos e instructivos ratos jugando con tus amigos y compitiendo por ver quién obtiene una mayor puntuación en cada uno de los diferentes juegos. Selecciona un juego, pulsa Start! y ¡A JUGAR!"
 // carousel de imágenes de mapas  para el home
-var homecarousel ='<div id="homecarousel" class="carousel slide" data-ride="carousel">'+
+var homecarousel ='<div id="homecarousel" class="carousel slide" data-ride="carousel"data-interval=1000>'+
       
      ' <div class="carousel-inner" style="text-align: center;" role="listbox">'+
      '   <div class="item active">'+
@@ -67,11 +67,40 @@ function dist(lat1, lon1, lat2, lon2)
 /////////  función para calcular la puntuación de una jugada  //////////////
 /////// in: distancia, fotos vistas y tipo juego; out:puntuación  //////////
 ////////////////////////////////////////////////////////////////////////////
-
-function calcpunt(dist,numfotos,tipo){		//tipo para si Hispania, se puntúa diferente
+/*
+function calcpunt(dist,numfotos,tipo){		//tipo para si Hispania, se puntúa diferente (1 Hispania, 0 otros)
 	var puntuacion
 	// de momento: puntuacion = dist * numfotos
 	puntuacion = dist*numfotos
+	return puntuacion	
+}*/
+function calcpunt(dist,numfotos,tipo){		//tipo para si Hispania, se puntúa diferente (1 Hispania, 0 otros)
+	var puntuacion
+	// si Hispania, dist * 12 para asemejar
+	/*
+	 * Para calcular puntuación : por intervalos de 500 km
+	 * En Hispania multiplico por 12 porque las distancias son mucho menores
+	 * Resto 5 puntos por cada foto vista, a partir de la primera (1 foto-> - 0 ; 2 fotos -> -10: 3 fotos -> -15)
+	 * Puntuación mínima -> 0
+	 * 
+	 * */
+	if(tipo){dist = dist*12}
+	if(dist<500){puntuacion = 100}else{
+	if(dist<1000){puntuacion = 90}else{
+	if(dist<1500){puntuacion = 80}else{
+	if(dist<2000){puntuacion = 70}else{
+	if(dist<2500){puntuacion = 60}else{
+	if(dist<3000){puntuacion = 50}else{
+	if(dist<3500){puntuacion = 40}else{
+	if(dist<4000){puntuacion = 30}else{
+	if(dist<4500){puntuacion = 20}else{
+	if(dist<5000){puntuacion = 10}else{
+	if(dist>5000){puntuacion = 0}
+	}}}}}}}}}}
+	if(numfotos > 1){
+	puntuacion = puntuacion - (5*numfotos)	//restamos 5 puntos por cada foto vista
+	}
+	if (puntuacion<0){puntuacion = 0}		//mínimo se saca 0 de puntuación
 	return puntuacion	
 }
 
@@ -81,9 +110,9 @@ function calcpunt(dist,numfotos,tipo){		//tipo para si Hispania, se puntúa dife
 /////// out: html a incluir en elemento #cuadropunt   //////////
 /////////////////////////////////////////////////////////////////////////////
 
-function rellenoCuadroPunt(nombre,dist,fotos,findepartida,puntfinal){
+function rellenoCuadroPunt(nombre,dist,fotos,findepartida,puntfinal,esHispania){
 	
-	var punt = calcpunt(dist,fotos,1)
+	var punt = calcpunt(dist,fotos,esHispania)
 	var boton = ""
 	var texto = ""
 	texto =" Respuesta: " + nombre + "<br>" +
@@ -112,90 +141,46 @@ function rellenoCuadroPunt(nombre,dist,fotos,findepartida,puntfinal){
 //// incluido en el htmlen forma $("#id").html(stringcreado) o similares////
 
 //array con 10 fotos para las descargas de flickr
-function creoCarrousel(array){
+function creoCarrousel(array,dif){		//dificultad [1,2,3,4] = [8 seg,6seg,4seg,2seg]
 	var carousel = ""
+	var speed
+	if(dif==1){speed = 8000}
+	if(dif==2){speed = 6000}
+	if(dif==3){speed = 4000}
+	if(dif==4){speed = 2000}
 	
-    carousel = '<div id="myCarousel" class="carousel slide" data-ride="carousel">'+
+    carousel = '<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval='+speed+' cycle="true">'+
       
      ' <div class="carousel-inner" style="text-align: center;" role="listbox">'+
      '   <div class="item active">'+
       '    <img src="'+array[0]+'" alt="First slide" style="display: inline-block;">'+
-       '   <div class="container">'+
-       '     <div class="carousel-caption">'+
-              
-      '      </div>'+
-        '  </div>'+
     '    </div>'+
       '  <div class="item">'+
       '    <img src="'+array[1]+'" alt="Second slide" style="display: inline-block;">'+
-        '  <div class="container">'+
-       '     <div class="carousel-caption">'+
-        '    </div>'+
-       '   </div>'+
        ' </div>'+
        ' <div class="item">'+
        '   <img src="'+array[2]+'" alt="Third slide" style="display: inline-block;">'+
-       '   <div class="container">'+
-       '     <div class="carousel-caption">'+
-             
-       '     </div>'+
-      '    </div>'+
       '  </div>'+
        ' <div class="item">'+
        '   <img src="'+array[3]+'" alt="Third slide" style="display: inline-block;">'+
-       '   <div class="container">'+
-       '     <div class="carousel-caption">'+
-             
-       '     </div>'+
-      '    </div>'+
       '  </div>'+
        ' <div class="item">'+
       '    <img src="'+array[4]+'" alt="Fourth slide" style="display: inline-block;">'+
-        '  <div class="container">'+
-        '    <div class="carousel-caption">'+
-             
-       '     </div>'+
-        '  </div>'+
      '   </div>'+
        ' <div class="item">'+
       '    <img src="'+array[5]+'" alt="Fifth slide" style="display: inline-block;">'+
-        '  <div class="container">'+
-        '    <div class="carousel-caption">'+
-             
-       '     </div>'+
-        '  </div>'+
      '   </div>'+
        ' <div class="item">'+
       '    <img src="'+array[6]+'" alt="Sixth slide" style="display: inline-block;">'+
-        '  <div class="container">'+
-        '    <div class="carousel-caption">'+
-             
-       '     </div>'+
-        '  </div>'+
      '   </div>'+
        ' <div class="item">'+
       '    <img src="'+array[7]+'" alt="Seventh slide" style="display: inline-block;">'+
-        '  <div class="container">'+
-        '    <div class="carousel-caption">'+
-             
-       '     </div>'+
-        '  </div>'+
      '   </div>'+
        ' <div class="item">'+
       '    <img src="'+array[8]+'" alt="Eighth slide" style="display: inline-block;">'+
-        '  <div class="container">'+
-        '    <div class="carousel-caption">'+
-             
-       '     </div>'+
-        '  </div>'+
      '   </div>'+
        ' <div class="item">'+
       '    <img src="'+array[9]+'" alt="Ninth slide" style="display: inline-block;">'+
-        '  <div class="container">'+
-        '    <div class="carousel-caption">'+
-             
-       '     </div>'+
-        '  </div>'+
      '   </div>'+
     '  </div>'+
      ' <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">'+	//esto tenemos que quitarlo (izda y dcha en carousel)
@@ -219,18 +204,33 @@ $(document).ready(function() {
 	var respuesta
 	var todasusadas = 0
 	var puntfinal = 0		//la de cada partida
+	var esHispania = 0 //se puntúa diferente el juego Hispania
 		
 	// la del usuario (luego, localStorage)
 	function getpunt(){
 		console.log(localStorage.getItem("puntuacion"))
-		if(localStorage.getItem("puntuacion")!=0){
+		if(localStorage.getItem("puntuacion")!=null){
 			return localStorage.getItem("puntuacion")
 		}else{
-			return 5
+			return 0
 		}
 		
 		
 	}
+	
+	//cambiar velocidad del carousel de fotos
+	/*
+	$('.carousel').carousel({
+				interval: (1000 * 1)
+				});
+	
+	
+	*/
+	
+	
+	
+	
+	///////////////////////////////////////////
 	var puntfinaldelinfinito = getpunt()
 	$("#numpuntuacion").html(puntfinaldelinfinito)
 	var usadas = [] //array que recopilo los índices usados (cuando estén vistos todos, puntuación y al home, por ejemplo)
@@ -354,8 +354,9 @@ $(document).ready(function() {
 			if(data.items[i]==undefined){break}
 			array.push(data.items[i].media.m)
 		}
-		var carrousel = creoCarrousel(array)	//funcion que crea carrousel de tamaño 10
+		var carrousel = creoCarrousel(array,speed)	//funcion que crea carrousel de tamaño 10
 		$("#fotos").html(carrousel);
+		$('#myCarousel').carousel();// para que arranque solo
 	})
 		
 	}
@@ -364,6 +365,7 @@ $(document).ready(function() {
 		$('#confposicion').show()
 		if (flag){map.removeLayer(marker)} //borro el anterior popup
 		var juego = $("#mijuego").html()	// selecciono el juego determinado
+		if(juego =="Hispania"){esHispania = 1;map.setView([40,(-3)], 5)}else {esHispania = 0;map.setView([0,0], 1)}
 		$.getJSON("juegos/"+juego+".json",function(data){
 			local = nuevoGeoJson(data)
 			latactual = local.geometry.coordinates[1]
@@ -427,9 +429,9 @@ $(document).ready(function() {
 	}
 	function mostrarPunt(distancia){
 			var dimension = Math.ceil($(window).width()/4)
-			var punt = calcpunt(distancia,1)
+			var punt = calcpunt(distancia,1,esHispania)
 			puntfinal = puntfinal + punt
-			$('#cuadropunt').html(rellenoCuadroPunt(respuesta,distancia,1,todasusadas,puntfinal)).css({'left':130, 'width':(4*dimension)/2,'top':150})
+			$('#cuadropunt').html(rellenoCuadroPunt(respuesta,distancia,1,todasusadas,puntfinal,esHispania)).css({'left':130, 'width':(4*dimension)/2,'top':150})
 			.show()
 			$('#confposicion').hide()
 			
