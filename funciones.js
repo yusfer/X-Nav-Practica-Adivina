@@ -194,6 +194,7 @@ $(document).ready(function() {
 	var latactual
 	var lngactual
 	var respuesta
+	var fotosvistas = 1
 	var todasusadas = 0
 	var puntfinal = 0		//la de cada partida
 	var esHispania = 0 //se puntúa diferente el juego Hispania
@@ -354,6 +355,12 @@ $(document).ready(function() {
 		var carrousel = creoCarrousel(array,dif)	//funcion que crea carrousel de tamaño 10
 		$("#fotos").html(carrousel);
 		$('#myCarousel').carousel();// para que arranque solo
+		$("#myCarousel").on("slid.bs.carousel",function(e){
+		
+			fotosvistas++
+		
+		
+		})
 	})
 		
 	}
@@ -426,10 +433,11 @@ $(document).ready(function() {
 	}
 	function mostrarPunt(distancia){
 			var dimension = Math.ceil($(window).width()/4)
-			var punt = calcpunt(distancia,1,esHispania)
+			var punt = calcpunt(distancia,fotosvistas,esHispania)
 			puntfinal = puntfinal + punt
-			$('#cuadropunt').html(rellenoCuadroPunt(respuesta,distancia,1,todasusadas,puntfinal,esHispania)).css({'left':130, 'width':(4*dimension)/2,'top':150})
+			$('#cuadropunt').html(rellenoCuadroPunt(respuesta,distancia,fotosvistas,todasusadas,puntfinal,esHispania)).css({'left':130, 'width':(4*dimension)/2,'top':150})
 			.show()
+			fotosvistas = 1
 			$('#confposicion').hide()
 			
 			$("#sigjuego").click(function(){		
@@ -463,6 +471,9 @@ $(document).ready(function() {
 	
 		mostrarInfo(dataabout)
 	})
+	
+	
+	
 	
 	////////////////////////////// RELACIONADOS ALTERNANCIA HOME Y RESTO ///////////////////////////////////////
 	
