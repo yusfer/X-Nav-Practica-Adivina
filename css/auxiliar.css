@@ -28,14 +28,23 @@ footer {
 }
 
 
-#juegoseleccionado, #puntuaciontotal{
+#juegoseleccionado, #puntuaciontotal, #todoslider{
 	font-family: "Courier", Times,fantasy;
 	font-weight: bold;
-	font-size: 22px;
+	font-size: 19px;
 	margin:20px 20px 20px 20px;
 	color: #FFFFFF;
 	cursor:default;
 }
+
+ #amount{
+ 
+	width: 40px;
+	font-size: 15px;
+	text-align: center; 
+
+
+ }
 .button {
 
 	font-family: "Courier", Times,fantasy;

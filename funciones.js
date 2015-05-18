@@ -4,7 +4,7 @@ var datareglas = "Selecciona un tipo de juego, una dificultad y pulsa Start! Int
 var dataabout = "Juego Adivina Donde Está creado por Fernando Yustas Ruiz para la asignatura Desarrollo de Aplicaciones Telemáticas (DAT)"
 var datahome = "Emocionante juego en el que tendrás que mostrar tus habilidades geográficas y de asociación visual. Pasa entretenidos e instructivos ratos jugando con tus amigos y compitiendo por ver quién obtiene una mayor puntuación en cada uno de los diferentes juegos. Selecciona un juego, pulsa Start! y ¡A JUGAR!"
 // carousel de imágenes de mapas  para el home
-var homecarousel ='<div id="homecarousel" class="carousel slide" data-ride="carousel"data-interval=1000>'+
+var homecarousel ='<div id="homecarousel" class="carousel slide" data-ride="carousel">'+
       
      ' <div class="carousel-inner" style="text-align: center;" role="listbox">'+
      '   <div class="item active">'+
@@ -183,14 +183,6 @@ function creoCarrousel(array,dif){		//dificultad [1,2,3,4] = [8 seg,6seg,4seg,2s
       '    <img src="'+array[9]+'" alt="Ninth slide" style="display: inline-block;">'+
      '   </div>'+
     '  </div>'+
-     ' <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">'+	//esto tenemos que quitarlo (izda y dcha en carousel)
-      '  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>'+
-      '  <span class="sr-only">Previous</span>'+
-    '  </a>'+
-     ' <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">'+
-      '  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'+
-     '   <span class="sr-only">Next</span>'+
-      '</a>'+
    ' </div>'
    return carousel
 }
@@ -218,16 +210,20 @@ $(document).ready(function() {
 		
 	}
 	
-	//cambiar velocidad del carousel de fotos
-	/*
-	$('.carousel').carousel({
-				interval: (1000 * 1)
-				});
+	 function mislider() {
+		$( "#slider" ).slider({
+		value:100,
+		min: 1,
+		max: 4,
+		step: 1,
+		slide: function( event, ui ) {
+			$( "#amount" ).val(+ ui.value );
+		}
+		});
+		$( "#amount" ).val( $( "#slider" ).slider( "value" ) );
+	};
 	
-	
-	*/
-	
-	
+	mislider()
 	
 	
 	///////////////////////////////////////////
@@ -354,7 +350,8 @@ $(document).ready(function() {
 			if(data.items[i]==undefined){break}
 			array.push(data.items[i].media.m)
 		}
-		var carrousel = creoCarrousel(array,speed)	//funcion que crea carrousel de tamaño 10
+		var dif= $( "#slider" ).slider( "value" )
+		var carrousel = creoCarrousel(array,dif)	//funcion que crea carrousel de tamaño 10
 		$("#fotos").html(carrousel);
 		$('#myCarousel').carousel();// para que arranque solo
 	})
