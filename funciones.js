@@ -1,4 +1,6 @@
 
+var estadoactual = 0
+
 //////// texto de información   ///////
 var datareglas = "Selecciona un tipo de juego, una dificultad y pulsa Start! Intenta adivinar con el menor número de fotos la situación geográfica de nuestro objetivo y alcanzarás una mayor puntuación. Pincha en el mapa y cuando tengas decidida tu respuesta final, clickea en Confirmar Posición! En mitad de una partida, puedes elegir un nuevo juego y dificultad y pulsando en Reiniciar Juego, empezarás uno nuevo según tu elección descartando lo hecho en el anterior"
 var dataabout = "Juego Adivina Donde Está creado por Fernando Yustas Ruiz para la asignatura Desarrollo de Aplicaciones Telemáticas (DAT)"
@@ -135,6 +137,16 @@ function rellenoCuadroPunt(nombre,dist,fotos,findepartida,puntfinal,esHispania){
 ////////////////////////////////////////////////////////////////////////////
 
 
+function cambioestado(num){
+	
+	// cambio el estadoactual al que nos movemos
+	
+	cambio = num-estadoactual
+	estadoactual = num
+	history.go(cambio)
+	
+}
+
 //////////****** FUNCIONES CREACIÓN DINÁMICA BOOTSTRAP ******//////////
 //// estas funciones crearán dinámicamente el bootstrap según  ciertos////
 //// parámetros en un array (generalmente) y retornarán el string que será ////
@@ -252,10 +264,16 @@ $(document).ready(function() {
 		
 
 	}	
-
-
 	
-	
+	function nuevoHistorial(juego){
+		//Añadimos al historial estado con nombre del juego
+		data = {nombre:juego,fecha: new Date()}
+		history.pushState(data,null,location.href.split("?")[0]+'?'+juego)
+		link = '<a id='+data.nombre+' href="javascript:cambioestado('+estadoactual+')" >'+data.nombre+'</a>'
+		$("#historial").append(link)
+		alert("estado actual  "  + estadoactual)
+				
+	}	
 	
 	
 	
@@ -379,15 +397,18 @@ $(document).ready(function() {
 		})
 	}
 	$("#startbutton").click(function(){
+		if(estadoactual!=0){estadoactual++}
 		ocultarHome()
 		mapayfotos()
+		nuevoHistorial($("#mijuego").html())
 		
 	})
 		
 	$("#reiniciarbutton").click(function(){		//esto se hará automático
-		
+		estadoactual++
 		usadas = []		//cada vez que reinicio juego, a cero las usadas
 		mapayfotos()
+		nuevoHistorial($("#mijuego").html())
 			
 	})
 	
@@ -486,5 +507,22 @@ $(document).ready(function() {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////     FIN RELACIONADO CON HOME    /////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	function replaceHistorial(data){
+		alert(data)
+		if(data!=null){
+			alert("data2   " + data.nombre)
+			$("#mijuego").html(data.nombre)
+		}
+	}    
+
+
+
+    window.onpopstate= function(event) {
+
+        replaceHistorial(event.state);
+    };
 
 });

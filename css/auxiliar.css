@@ -175,7 +175,7 @@ top:120px;
 
 }
 
-#textohome {
+#textohome, #historial{
 	font-family: "Courier", Times,fantasy;
 	font-weight: bold;
 	font-size: 18px;
@@ -190,6 +190,7 @@ top:120px;
 	border-width: 10px;
 	box-shadow:20px 5px 20px #000000;
 }
+
 
 
 
