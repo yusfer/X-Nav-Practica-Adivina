@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html manifest="adivinaapp.manifest">
 	<head>	
 		<meta charset="utf-8" />
-		<title> Adivina Dónde Está! </title>
+		<title> ¡Adivina Dónde Está! </title>
 		
 		<link rel="stylesheet" type="text/css" href="css/auxiliar.css" title="style" />
 		<!-- jQuery -->
 		<script src="jquery.js" type="text/javascript"></script>
 		<script src="funciones.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<!-- Leaflets -->
 		<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
 		<script src="http://open.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key= Fmjtd%7Cluu82luz2h%2C22%3Do5-948slf"></script>
@@ -23,6 +25,7 @@
 		
 	</head>
 	<body>
+
 	<div class="backgroundid">
 		<div id="navbar"> NAVBAR 
 		<!-- NAVBAR -->
@@ -44,22 +47,27 @@
 			<ul class="nav navbar-nav">
 				<li ><button id ="reglasbutton"type="button" class="btn btn-default button">REGLAS</button></li>
 				<li ><button id ="aboutbutton"type="button" class="btn btn-default button">ABOUT</button></li>
-				<li class="dropdown">'+ 
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Juegos <span class="caret"></span></a>
-				<ul class="dropdown-menu" role="menu">
-					<li><button type="button" class ="cambiojuego">Juego 1</button></li>
-					<li><button type="button" class ="cambiojuego">Juego 2</button></li>
-					<li><button type="button" class ="cambiojuego">Juego 3</button></li>
-					<li><button type="button" class ="cambiojuego">Juego 4</button></li>
-				</ul>
-				</li>
+				<li id="puntuaciontotal"> Puntuación usuario:<span id="numpuntuacion">0</span> </li>
 				
 		  </ul>
 		  
 		  
 		  <ul class="nav navbar-nav navbar-right">
-			  
-		  <li id="juegoseleccionado"> Juego seleccionado: TAL </li>  
+		  <li id="todoslider"> 
+				<label for="amount">Dificultad:</label>
+				<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+				<div id="slider"></div>
+				</li>
+		  <li class="dropdown">'+ 
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Juegos <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><button type="button" class ="cambiojuego">Capitales</button></li>
+					<li><button type="button" class ="cambiojuego">Monumentos</button></li>
+					<li><button type="button" class ="cambiojuego">Hispania</button></li>
+					<li><button type="button" class ="cambiojuego">Juego 4</button></li>
+				</ul>
+				</li>
+		  <li id="juegoseleccionado"> Juego:<span id="mijuego">Capitales</span> </li>  
 		  <li ><button id ="reiniciarbutton"type="button" class="btn btn-default button">REINICIAR</button></li>
 		  <li ><button id ="startbutton"type="button" class="btn btn-default button">START!</button></li>
 		   </ul>
@@ -72,17 +80,22 @@
 		<!-- NAVBAR -->
 		</div>	
 		<div id="divhome"><!-- Solo lo que mostraremos en estado HOME, #fotos y #generalmap .hover()-->
-		
+			<div id="titulohome"> ¡ADIVINA DÓNDE ESTÁ!</div>
+			<div id="textohome" class="col-md-4">  </div>	
+			<div id="fotoshome" class="col-md-6">  </div>
+			<p>_</p>
 		</div>
 		
-		<div id="fotos" class="col-md-4"> <h1>FOTOS</h1> <p> tal tal tal</p> </div>	
+		<div id="fotos" class="col-md-4"> </div>	
 		<div id="generalmap" class="col-md-8">
 			<div id="map" > MAPA </div>
 			<button id="confposicion" class="button"> Confirmar Posición!</button>
 		</div>	
 		
 		<p>_</p>
-		<footer>
+		
+	</div>	
+	<footer>
         <div id="footer" class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -104,7 +117,6 @@
             </div>
         </div>
     </footer>
-	</div>	
 	</body>
 	
 </html>

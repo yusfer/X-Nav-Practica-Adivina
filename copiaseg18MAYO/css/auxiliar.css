@@ -3,6 +3,7 @@
 div.backgroundid{
 	background-image: url(../images/passport1.jpg);    
     background-repeat:repeat;
+    height:800px;
 
 }
 
@@ -23,17 +24,27 @@ footer {
 	border-radius: 50px;
 	color:#FFFFFF;
 	cursor:pointer;
+	font-family: MyFont;
 }
 
 
-#juegoseleccionado{
+#juegoseleccionado, #puntuaciontotal, #todoslider{
 	font-family: "Courier", Times,fantasy;
 	font-weight: bold;
-	font-size: 22px;
+	font-size: 19px;
 	margin:20px 20px 20px 20px;
 	color: #FFFFFF;
 	cursor:default;
 }
+
+ #amount{
+ 
+	width: 40px;
+	font-size: 15px;
+	text-align: center; 
+
+
+ }
 .button {
 
 	font-family: "Courier", Times,fantasy;
@@ -55,10 +66,18 @@ footer {
 #startbutton {
 	color: #FFFFFF;
 	background-color:#C91010;
+	font-size: 20px;
+}
+#startbutton:hover{
+	font-size: 28px;
 }
 #reiniciarbutton {
 	color: #FFFFFF;
 	background-color:#119C1C;
+	font-size: 20px;
+}
+#reiniciarbutton:hover{
+	font-size: 28px;
 }
 #aboutbutton {
 	color: #FFFFFF;
@@ -105,6 +124,21 @@ top:120px;
 	border-radius: 15px;
 	border-width: 5px;
 }
+#cuadropunt{
+	padding: 2ex;
+	position: absolute;
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
+	border: 2px double grey;
+	background: wheat;
+	height:550;
+	width: 150;
+	top:150;
+	text-align: center;
+	font-size: 18px;
+	border-radius: 15px;
+	border-width: 5px;
+}
 
 #closeLink {
 	font-size: 25px;
@@ -116,5 +150,47 @@ top:120px;
 #closeLink:hover{
 	text-decoration: underline;
 }
+
+@font-face {
+ font-family: MyFont;
+ font-style: serif;
+ font-weight: normal;
+ src: url(/fonts/cooper_std_black.woff);
+ }
+ 
+#titulohome {
+	font-family: MyFont;
+	font-size: 50px;
+	color: #1035A8;
+	/*background-color: #7EB8ED;*/
+	background: linear-gradient(#FFFFFF, #59CEF1);
+	margin: 40px 200px 50px 200px;
+    padding: 20px;
+    width: 840px;
+    text-align: center;
+    border-style: solid;
+	border-radius: 15px;
+	border-width: 10px;
+	box-shadow:20px 5px 20px #000000;
+
+}
+
+#textohome {
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	padding: 30px;
+	margin: 10px 100px 10px 50px;
+	color: #0E7D19;
+	background: linear-gradient(#FFFFFF, #82EA87);
+	/*background: wheat;*/
+	border-style: solid;
+	border-radius: 15px;
+	border-width: 10px;
+	box-shadow:20px 5px 20px #000000;
+}
+
+
 
 
