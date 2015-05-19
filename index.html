@@ -64,7 +64,6 @@
 					<li><button type="button" class ="cambiojuego">Capitales</button></li>
 					<li><button type="button" class ="cambiojuego">Monumentos</button></li>
 					<li><button type="button" class ="cambiojuego">Hispania</button></li>
-					<li><button type="button" class ="cambiojuego">Juego 4</button></li>
 				</ul>
 				</li>
 		  <li id="juegoseleccionado"> Juego:<span id="mijuego">Capitales</span> </li>  
@@ -80,18 +79,24 @@
 		<!-- NAVBAR -->
 		</div>	
 		<div id="divhome"><!-- Solo lo que mostraremos en estado HOME, #fotos y #generalmap .hover()-->
-			<div id="titulohome"> ¡ADIVINA DÓNDE ESTÁ!</div>
-			<div id="textohome" class="col-md-4">  </div>	
-			<div id="fotoshome" class="col-md-6">  </div>
-			<div id="historial" class="col-md-3"> HISTORIAL </div>
+			<div class="row">	<div id="titulohome" class="col-md-6"> ¡ADIVINA DÓNDE ESTÁ!</div></div>
+			<div class="row">
+				<div id="textohome" class="col-md-4">  </div>	
+				<div id="fotoshome" class="col-md-6">  </div>
+			</div>
+			<div id="historial" class="col-md-3"> Last Games! </div>
 			<p>_</p>
 		</div>
-		
-		<div id="fotos" class="col-md-4"> </div>	
-		<div id="generalmap" class="col-md-8">
-			<div id="map" > MAPA </div>
-			<button id="confposicion" class="button"> Confirmar Posición!</button>
-		</div>	
+		<div class="row">
+			<div id="generalfotos" class="col-md-4">	
+				<div id="fotos"> </div>	
+			</div>	
+			<div id="generalmap" class="col-md-8">
+				<div id="map" > MAPA </div>
+				<button id="confposicion" class="button"> Confirmar Posición!</button>
+				<div id="historial2">Last Games!</div>
+			</div>	
+		</div>
 		
 		<p>_</p>
 		

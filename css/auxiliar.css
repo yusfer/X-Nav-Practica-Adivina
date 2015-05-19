@@ -3,7 +3,7 @@
 div.backgroundid{
 	background-image: url(../images/passport1.jpg);    
     background-repeat:repeat;
-    height:800px;
+    height:1000px;
 
 }
 
@@ -26,7 +26,13 @@ footer {
 	cursor:pointer;
 	font-family: MyFont;
 }
-
+.cambiojuego{
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
 
 #juegoseleccionado, #puntuaciontotal, #todoslider{
 	font-family: "Courier", Times,fantasy;
@@ -175,7 +181,7 @@ top:120px;
 
 }
 
-#textohome, #historial{
+#textohome, #historial,#historial2{
 	font-family: "Courier", Times,fantasy;
 	font-weight: bold;
 	font-size: 18px;
@@ -191,6 +197,14 @@ top:120px;
 	box-shadow:20px 5px 20px #000000;
 }
 
+#historial, #historial2{
+	background: linear-gradient(#000000, #306487);
+	color: #FFFFFF;
+}
+
+#historial2{
+	margin-top:20px;
+}
 
 
 

@@ -165,34 +165,34 @@ function creoCarrousel(array,dif){		//dificultad [1,2,3,4] = [8 seg,6seg,4seg,2s
       
      ' <div class="carousel-inner" style="text-align: center;" role="listbox">'+
      '   <div class="item active">'+
-      '    <img src="'+array[0]+'" alt="First slide" style="display: inline-block;">'+
+      '    <img src="'+array[0]+'" alt="First slide" style="display: inline-block;widht:300;height:200;">'+
     '    </div>'+
       '  <div class="item">'+
-      '    <img src="'+array[1]+'" alt="Second slide" style="display: inline-block;">'+
+      '    <img src="'+array[1]+'" alt="Second slide" style="display: inline-block;widht:300;height:200;">'+
        ' </div>'+
        ' <div class="item">'+
-       '   <img src="'+array[2]+'" alt="Third slide" style="display: inline-block;">'+
+       '   <img src="'+array[2]+'" alt="Third slide" style="display: inline-block;widht:300;height:200;">'+
       '  </div>'+
        ' <div class="item">'+
-       '   <img src="'+array[3]+'" alt="Third slide" style="display: inline-block;">'+
+       '   <img src="'+array[3]+'" alt="Third slide" style="display: inline-block;widht:300;height:200;">'+
       '  </div>'+
        ' <div class="item">'+
-      '    <img src="'+array[4]+'" alt="Fourth slide" style="display: inline-block;">'+
+      '    <img src="'+array[4]+'" alt="Fourth slide" style="display: inline-block;widht:300;height:200;">'+
      '   </div>'+
        ' <div class="item">'+
-      '    <img src="'+array[5]+'" alt="Fifth slide" style="display: inline-block;">'+
+      '    <img src="'+array[5]+'" alt="Fifth slide" style="display: inline-block;widht:300;height:200;">'+
      '   </div>'+
        ' <div class="item">'+
-      '    <img src="'+array[6]+'" alt="Sixth slide" style="display: inline-block;">'+
+      '    <img src="'+array[6]+'" alt="Sixth slide" style="display: inline-block;widht:300;height:200;">'+
      '   </div>'+
        ' <div class="item">'+
-      '    <img src="'+array[7]+'" alt="Seventh slide" style="display: inline-block;">'+
+      '    <img src="'+array[7]+'" alt="Seventh slide" style="display: inline-block;widht:300;height:200;">'+
      '   </div>'+
        ' <div class="item">'+
-      '    <img src="'+array[8]+'" alt="Eighth slide" style="display: inline-block;">'+
+      '    <img src="'+array[8]+'" alt="Eighth slide" style="display: inline-block;widht:300;height:200;">'+
      '   </div>'+
        ' <div class="item">'+
-      '    <img src="'+array[9]+'" alt="Ninth slide" style="display: inline-block;">'+
+      '    <img src="'+array[9]+'" alt="Ninth slide" style="display: inline-block;widht:300;height:200;">'+
      '   </div>'+
     '  </div>'+
    ' </div>'
@@ -268,10 +268,10 @@ $(document).ready(function() {
 	function nuevoHistorial(juego){
 		//Añadimos al historial estado con nombre del juego
 		data = {nombre:juego,fecha: new Date()}
-		history.pushState(data,null,location.href.split("?")[0]+'?'+juego)
-		link = '<a id='+data.nombre+' href="javascript:cambioestado('+estadoactual+')" >'+data.nombre+'</a>'
+		history.pushState(data,juego,location.href.split("?")[0]+'?'+juego)
+		link = '<li><a id='+data.nombre+' href="javascript:cambioestado('+estadoactual+')" >'+data.nombre+' --- '+data.fecha+'</a></li>'
 		$("#historial").append(link)
-		alert("estado actual  "  + estadoactual)
+		$("#historial2").html($("#historial").html())
 				
 	}	
 	
@@ -348,7 +348,7 @@ $(document).ready(function() {
 			local = datos.features[num]
 			usadas.push(num)
 			console.log(local.properties.Name)
-			if (usadas.length == datos.features.length) {todasusadas = 1;alert("cambio valor todasusadas")}
+			if (usadas.length == datos.features.length) {todasusadas = 1}
 			}
 		if(local==undefined){
 			return nuevoGeoJson(datos)
@@ -511,9 +511,7 @@ $(document).ready(function() {
 	
 	
 	function replaceHistorial(data){
-		alert(data)
 		if(data!=null){
-			alert("data2   " + data.nombre)
 			$("#mijuego").html(data.nombre)
 		}
 	}    
