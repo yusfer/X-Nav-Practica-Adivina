@@ -1,0 +1,211 @@
+
+
+div.backgroundid{
+	background-image: url(../images/passport1.jpg);    
+    background-repeat:repeat;
+    height:1000px;
+
+}
+
+footer {
+	background-color: black;
+}
+
+.tak{
+	 margin-left: 250px;
+
+}
+#navbar {
+	margin:20px 20px 75px 20px;
+}
+
+#home{
+	background-color: #4169E1;
+	border-radius: 50px;
+	color:#FFFFFF;
+	cursor:pointer;
+	font-family: MyFont;
+}
+.cambiojuego{
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+#juegoseleccionado, #puntuaciontotal, #todoslider{
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
+	font-size: 19px;
+	margin:20px 20px 20px 20px;
+	color: #FFFFFF;
+	cursor:default;
+}
+
+ #amount{
+ 
+	width: 40px;
+	font-size: 15px;
+	text-align: center; 
+
+
+ }
+.button {
+
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
+	margin:20px 20px 20px 20px;
+	border-style: solid;
+    border-width: 5px;
+    font-size: 18px;
+    border-color: #000000;
+    padding: 20px;
+    border-radius: 15px;
+}
+.btn{
+	font-weight:bold;
+}
+.button:hover{
+	font-size: 22px;
+}
+#startbutton {
+	color: #FFFFFF;
+	background-color:#C91010;
+	font-size: 20px;
+}
+#startbutton:hover{
+	font-size: 28px;
+}
+#reiniciarbutton {
+	color: #FFFFFF;
+	background-color:#119C1C;
+	font-size: 20px;
+}
+#reiniciarbutton:hover{
+	font-size: 28px;
+}
+#aboutbutton {
+	color: #FFFFFF;
+	background-color:#1DB3D2;
+}
+#reglasbutton {
+	color: #FFFFFF;
+	background-color:#EE8012;
+}
+
+
+#map { height: 400px; width:700px;margin:20px 20px 20px 120px;}
+
+#confposicion {
+	margin-left: 500px;
+    margin-right: auto;
+
+}
+
+#fotos > img{
+ background-color: green;
+ display: inline-block;
+ }
+ 
+ #myCarousel {
+text-align: center; 
+top:120px;
+ }
+ 
+.carousel-inner { text-align: center; }
+.carousel .item > img { display: inline-block; }
+
+
+.information{
+	padding: 2ex;
+	position: absolute;
+	border: 2px double grey;
+	background: wheat;
+	height:550;
+	width: 150;
+	top:150;
+	text-align: center;
+	font-size: 18px;
+	border-radius: 15px;
+	border-width: 5px;
+}
+#cuadropunt{
+	padding: 2ex;
+	position: absolute;
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
+	border: 2px double grey;
+	background: wheat;
+	height:550;
+	width: 150;
+	top:150;
+	text-align: center;
+	font-size: 18px;
+	border-radius: 15px;
+	border-width: 5px;
+}
+
+#closeLink {
+	font-size: 25px;
+	color: #A52A2A;
+	cursor:pointer;
+
+}
+
+#closeLink:hover{
+	text-decoration: underline;
+}
+
+@font-face {
+ font-family: MyFont;
+ font-style: serif;
+ font-weight: normal;
+ src: url(/fonts/cooper_std_black.woff);
+ }
+ 
+#titulohome {
+	font-family: MyFont;
+	font-size: 50px;
+	color: #1035A8;
+	/*background-color: #7EB8ED;*/
+	background: linear-gradient(#FFFFFF, #59CEF1);
+	margin: 40px 200px 50px 200px;
+    padding: 20px;
+    width: 840px;
+    text-align: center;
+    border-style: solid;
+	border-radius: 15px;
+	border-width: 10px;
+	box-shadow:20px 5px 20px #000000;
+
+}
+
+#textohome, #historial,#historial2{
+	font-family: "Courier", Times,fantasy;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	padding: 30px;
+	margin: 10px 100px 10px 50px;
+	color: #0E7D19;
+	background: linear-gradient(#FFFFFF, #82EA87);
+	/*background: wheat;*/
+	border-style: solid;
+	border-radius: 15px;
+	border-width: 10px;
+	box-shadow:20px 5px 20px #000000;
+}
+
+#historial, #historial2{
+	background: linear-gradient(#000000, #306487);
+	color: #FFFFFF;
+}
+
+#historial2{
+	margin-top:20px;
+}
+
+
+
+
