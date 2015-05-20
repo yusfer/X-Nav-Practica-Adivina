@@ -459,6 +459,7 @@ $(document).ready(function() {
 			puntfinal = puntfinal + punt
 			$('#cuadropunt').html(rellenoCuadroPunt(respuesta,distancia,fotosvistas,todasusadas,puntfinal,esHispania)).css({'left':130, 'width':(4*dimension)/2,'top':150})
 			.show()
+			if(todasusadas){todasusadas=0}
 			fotosvistas = 1
 			$('#confposicion').hide()
 			
@@ -472,7 +473,9 @@ $(document).ready(function() {
 			
 			$("#findejuego").click(function(){		
 				// sumar a puntos totales del infinito, sumarlos al html y poner a cero los de partida
+				console.log(usadas.length)
 				puntfinaldelinfinito = puntfinaldelinfinito + puntfinal
+				console.log(puntfinaldelinfinito)
 				localStorage.setItem("puntuacion",puntfinaldelinfinito)
 				puntfinal = 0
 				$("#numpuntuacion").html(puntfinaldelinfinito)
