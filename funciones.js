@@ -143,7 +143,8 @@ function cambioestado(num){
 	
 	cambio = num-estadoactual
 	estadoactual = num
-	history.go(cambio)
+	if(cambio!=0)
+		history.go(cambio)
 	
 }
 
@@ -373,7 +374,7 @@ $(document).ready(function() {
 		var dif= $( "#slider" ).slider( "value" )
 		var carrousel = creoCarrousel(array,dif)	//funcion que crea carrousel de tamaño 10
 		$("#fotos").html(carrousel);
-		$('#myCarousel').carousel();// para que arranque solo
+		$('#myCarousel').carousel({pause:'false'});// para que arranque solo
 		$("#myCarousel").on("slid.bs.carousel",function(e){
 		
 			fotosvistas++
