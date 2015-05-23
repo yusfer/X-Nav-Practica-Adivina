@@ -376,7 +376,7 @@ $(document).ready(function() {
 		$("#fotos").html(carrousel);
 		$('#myCarousel').carousel({pause:'false'});// para que arranque solo
 		$("#myCarousel").on("slid.bs.carousel",function(e){
-		
+			console.log("hola")
 			fotosvistas++
 		
 		
@@ -461,12 +461,12 @@ $(document).ready(function() {
 			$('#cuadropunt').html(rellenoCuadroPunt(respuesta,distancia,fotosvistas,todasusadas,puntfinal,esHispania)).css({'left':130, 'width':(4*dimension)/2,'top':150})
 			.show()
 			if(todasusadas){todasusadas=0}
-			fotosvistas = 1
 			$('#confposicion').hide()
 			
 			$("#sigjuego").click(function(){		
 				$('#confposicion').show()
 				$('#cuadropunt').hide()
+				fotosvistas = 1
 				mapayfotos()
 				console.log(usadas.length)
 
@@ -479,6 +479,7 @@ $(document).ready(function() {
 				console.log(puntfinaldelinfinito)
 				localStorage.setItem("puntuacion",puntfinaldelinfinito)
 				puntfinal = 0
+				fotosvistas = 1
 				$("#numpuntuacion").html(puntfinaldelinfinito)
 				$('#cuadropunt').hide()
 				mostrarHome()
