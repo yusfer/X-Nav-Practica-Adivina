@@ -475,7 +475,7 @@ $(document).ready(function() {
 			$("#findejuego").click(function(){		
 				// sumar a puntos totales del infinito, sumarlos al html y poner a cero los de partida
 				console.log(usadas.length)
-				puntfinaldelinfinito = puntfinaldelinfinito + puntfinal
+				puntfinaldelinfinito = parseInt(puntfinaldelinfinito) + parseInt(puntfinal)
 				console.log(puntfinaldelinfinito)
 				localStorage.setItem("puntuacion",puntfinaldelinfinito)
 				puntfinal = 0
