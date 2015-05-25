@@ -16,4 +16,4 @@ Detalles del enunciado en el programa de la asignatura.
 
 * Funcionalidades opcionales: Se almacena la puntuación del usuario en el navegador (localStorage)
 
-* [URL básico](dirección.enlace.aquí "título enlace aquí")
+* [URL básico](https://www.youtube.com/watch?v=7Ybd8DdJJyE "Vídeo parte obligatoria")
